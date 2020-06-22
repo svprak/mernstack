@@ -13,11 +13,16 @@ mongoose.connect(URI, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
-});
-const connection = mongoose.connection;
-connection.once('open', () => {
-  console.log('Mongo DB is connected');
-});
+})
+.then(() => {
+  console.log('DB CONNECTED');
+})
+.catch((err) => console.log("Can't connect to db."));
+// const connection = mongoose.connection;
+// connection.once('open', () => {
+//   console.log('Mongo DB is connected');
+// }).on('error', error=> console.log('Error connecting to db', error));
+
 const exerciseRouter = require('./routes/exercises');
 const userRouter = require('./routes/users');
 
