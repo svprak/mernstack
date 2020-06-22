@@ -5,6 +5,7 @@ export default class ExercisesList extends Component {
     return (
       <div>
         <h2>ExerciseList</h2>
+        <h4>Exlist</h4>
       </div>
     );
   }
